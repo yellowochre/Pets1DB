@@ -1,0 +1,25 @@
+<h1>Listing pet_clubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pet_clubs.each do |pet_club| %>
+      <tr>
+        <td><%= pet_club.name %></td>
+        <td><%= link_to 'Show', pet_club %></td>
+        <td><%= link_to 'Edit', edit_pet_club_path(pet_club) %></td>
+        <td><%= link_to 'Destroy', pet_club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pet club', new_pet_club_path %>
